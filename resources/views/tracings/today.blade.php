@@ -20,8 +20,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $t->tracing->full_name }}</td>
-            <td>{{ $t->tracing->address }}</td>
-            <td>{{ $t->tracing->gender }}</td>
+            <td>{{ $t->tracing->full_address }}</td>
             <td>{{ $t->created_at }}</td>
         </tr>
         @endforeach
