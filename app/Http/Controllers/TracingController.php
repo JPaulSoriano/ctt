@@ -23,7 +23,7 @@ class TracingController extends Controller
 
     public function today()
     {
-        $today = Visit::whereDate('created_at', '=', date('Y-m-d'))->get();
+        $today = TimeVisit::whereDate('created_at', '=', date('Y-m-d'))->get();
         return view('tracings.today', compact('today'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
