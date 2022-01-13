@@ -1,14 +1,14 @@
 @extends('layouts.app')
  
 @section('content')
-<div class="container">
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+
+<div class="container">
     <table class="table table-responsive" id="tracings">
     <thead>
         <tr>

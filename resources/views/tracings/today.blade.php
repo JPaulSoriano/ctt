@@ -7,14 +7,18 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+
 <div class="container">
     <table class="table table-responsive" id="tracings">
+    <thead>
         <tr>
             <th>No</th>
             <th>Name</th>
             <th>Address</th>
             <th>Visitid At</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach ($today as $t)
         <tr>
             <td>{{ ++$i }}</td>
@@ -23,6 +27,7 @@
             <td>{{ $t->created_at }}</td>
         </tr>
         @endforeach
+    </tbody>
     </table>
 </div> 
    
