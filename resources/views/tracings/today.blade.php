@@ -7,8 +7,8 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
-    <table class="table table-bordered">
+<div class="container">
+    <table class="table table-responsive" id="tracings">
         <tr>
             <th>No</th>
             <th>Name</th>
@@ -24,7 +24,6 @@
         </tr>
         @endforeach
     </table>
-  
-
-      
+</div> 
+   
 @endsection

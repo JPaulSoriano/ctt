@@ -41,35 +41,3 @@
 
 
 @endsection
-@section('scripts')
-<script>
-$(document).ready(function() {
-        $('#tracings').DataTable({
-            order: [[0, 'desc']],
-            dom: 'Bfrtip',
-            buttons: [{
-                responsive: true,
-                    extend: 'copyHtml5',
-                    exportOptions: {
-                        columns: [0, ':visible']
-                    }
-                },
-                {
-                    extend: 'csv',
-                    exportOptions: {
-                        columns: ':visible'
-                    }
-                },
-
-                {
-                    extend: 'print',
-                    exportOptions: {
-                        columns: ':visible'
-                    }
-                },
-                'colvis'
-            ]
-        });
-    });
-    </script>
-    @endsection
