@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/qrcode/{id}', 'QRController@generateQrCode');
 Route::resource('tracings','TracingController');
+Route::get('/today', 'TracingController@today')->name('today');
+
 
 // Auth::routes(['register' => false]);
 Auth::routes();
