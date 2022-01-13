@@ -13,7 +13,6 @@
             <th>No</th>
             <th>Name</th>
             <th>Address</th>
-            <th>Gender</th>
             <th>Visitid At</th>
         </tr>
         @foreach ($today as $t)
