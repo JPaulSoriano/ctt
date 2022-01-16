@@ -5,7 +5,7 @@
     <div class="row justify-content-center my-5">
         <div class="col-md-4">
             <p class="text-center text-primary font-weight-bold">
-            PRESENT THIS QR CODE TO THE GUARD BEFORE ENTERING THE CAMPUS
+            Present this QR to the Registration Team before entering the CdD Gymnasium.
             </p>
         </div>
     </div>
