@@ -1,7 +1,7 @@
 @extends('layouts.app')
  
 @section('content')
-
+   
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -13,29 +13,22 @@
     <thead>
         <tr>
             <th>No</th>
-            <th>Registered at</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
             <th>Address</th>
+            <th>Visitid At</th>
         </tr>
     </thead>
     <tbody>
-    @foreach ($registrations as $registration)
+        @foreach ($scanned as $s)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $registration->created_at }}</td>
-            <td>{{ $registration->full_name }}</td>
-            <td>{{ $registration->email }}</td>
-            <td>{{ $registration->phone }}</td>
-            <td>{{ $registration->full_address }}</td>
+            <td>{{ $s->tracing->full_name }}</td>
+            <td>{{ $s->tracing->full_address }}</td>
+            <td>{{ $s->created_at }}</td>
         </tr>
         @endforeach
     </tbody>
     </table>
-  
-</div>   
-
-
-
+</div> 
+   
 @endsection

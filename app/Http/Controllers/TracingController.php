@@ -16,8 +16,8 @@ class TracingController extends Controller
     }
     
     public function index(){
-        $timevisits = TimeVisit::all();
-        return view('tracings.index',compact('timevisits'))
+        $registrations = Tracing::all();
+        return view('tracings.index',compact('registrations'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -26,6 +26,13 @@ class TracingController extends Controller
         $today = TimeVisit::whereDate('created_at', '=', date('Y-m-d'))->get();
         return view('tracings.today', compact('today'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function scanned()
+    {
+        $scanned = TimeVisit::all();
+        return view('tracings.scanned', compact('scanned'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create(){

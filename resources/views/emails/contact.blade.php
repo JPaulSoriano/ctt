@@ -2,8 +2,8 @@
 <div align="center">
 {{ $qr->full_name }}
 </div>
-<div align="center">
-Present this QR to the Registration Team before entering the CdD Gymnasium.
+<div align="center my-2">
+PRESENT THIS QR TO THE REGISTRATION TEAM BEFORE ENTERING THE CDD GYMNASIUM.
 </div>
 <div align="center">
 <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(250)
