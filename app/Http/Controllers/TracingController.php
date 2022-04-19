@@ -62,11 +62,8 @@ class TracingController extends Controller
     }
 
     public function show(Tracing $tracing){
-
         $tracing->timeVisit()->create();
         return view('tracings.show',compact('tracing'));
-
-
     }
     
     public function destroy(Tracing $tracing){

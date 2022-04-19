@@ -5,7 +5,7 @@
     <div class="row justify-content-center my-5">
         <div class="col-md-4">
             <p class="text-center text-primary font-weight-bold">
-            PRESENT THIS QR TO THE REGISTRATION TEAM BEFORE ENTERING THE CDD GYMNASIUM.
+                PRESENT THIS QR TO THE BEFORE ENTERING THE UNIVERSIDAD DE DAGUPAN.
             </p>
         </div>
     </div>
