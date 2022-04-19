@@ -3,19 +3,20 @@
 @section('content')
 <div class="container">
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <label>Whoops!</label> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
     <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-10">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <label>Whoops!</label> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="card">
                 <div class="card-header bg-primary text-white">Details</div>
                 <div class="card-body">
