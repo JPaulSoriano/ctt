@@ -9,8 +9,8 @@
     @endif
 
 <div class="container">
-    <table class="table table-responsive" id="tracings">
-    <thead>
+    <table class="table table-borderless table-responsive" id="tracings">
+    <thead class="bg-primary text-white">
         <tr>
             <th>No</th>
             <th>Name</th>
