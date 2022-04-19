@@ -42,13 +42,13 @@
                                     <input type="text" name="middle_name" class="form-control" placeholder="Middle Name">
                                 </div>
                             </div>
-                            <div class="col-xs-2 col-sm-2 col-md-2">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
                                 <div class="form-group">
                                     <label>Student No:</label>
                                     <input type="text" name="student_no" class="form-control" placeholder="Student No">
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="col-xs-5 col-sm-5 col-md-5">
                                 <div class="form-group">
                                     <label>Email:</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email">
