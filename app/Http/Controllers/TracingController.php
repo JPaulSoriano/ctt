@@ -45,7 +45,7 @@ class TracingController extends Controller
             'last_name' => 'required',
             'first_name' => 'required',
             'middle_name' => 'required',
-            'age' => 'required',
+            'student_no' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'street' => 'required',

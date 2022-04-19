@@ -43,8 +43,8 @@
                             </div>
                             <div class="col-xs-2 col-sm-2 col-md-2">
                                 <div class="form-group">
-                                    <label>Age:</label>
-                                    <input type="text" name="age" class="form-control" placeholder="Age">
+                                    <label>Student No:</label>
+                                    <input type="text" name="student_no" class="form-control" placeholder="Student No">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">

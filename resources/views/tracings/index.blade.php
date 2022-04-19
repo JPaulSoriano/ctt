@@ -15,6 +15,7 @@
             <th>No</th>
             <th>Registered at</th>
             <th>Name</th>
+            <th>Student No</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
@@ -26,6 +27,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $registration->created_at }}</td>
             <td>{{ $registration->full_name }}</td>
+            <td>{{ $registration->student_no }}</td>
             <td>{{ $registration->email }}</td>
             <td>{{ $registration->phone }}</td>
             <td>{{ $registration->full_address }}</td>

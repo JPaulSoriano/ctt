@@ -14,6 +14,7 @@
         <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Student No</th>
             <th>Address</th>
             <th>Visitid At</th>
         </tr>
@@ -23,6 +24,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $t->tracing->full_name }}</td>
+            <td>{{ $t->tracing->student_no }}</td>
             <td>{{ $t->tracing->full_address }}</td>
             <td>{{ $t->created_at }}</td>
         </tr>

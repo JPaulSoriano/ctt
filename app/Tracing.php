@@ -10,7 +10,7 @@ class Tracing extends Model
         'last_name',
         'first_name',
         'middle_name',
-        'age',
+        'student_no',
         'email',
         'phone',
         'street',

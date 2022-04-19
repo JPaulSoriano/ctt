@@ -18,7 +18,7 @@ class CreateTracingsTable extends Migration
             $table->string('last_name');
             $table->string('first_name');
             $table->string('middle_name');
-            $table->string('age');
+            $table->string('student_no');
             $table->string('email');
             $table->string('phone');
             $table->string('street');
