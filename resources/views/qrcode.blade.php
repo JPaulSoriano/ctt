@@ -23,8 +23,7 @@
                              ->merge(public_path('images/logo.png'), 0.3, true)->errorCorrection('H')
                              ->color(0, 28, 64)
                              ->margin(3)
-	                        //  ->generate(url('/registrations')."/".$registration->id)); !!} ">
-                             ->generate(url('/status?status=').$registration->reg_ref)); !!} ">
+	                         ->generate(url('/registrations')."/".$registration->id)); !!} ">
                          </div>
                     </div>
                 </div>
