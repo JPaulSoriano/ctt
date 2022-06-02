@@ -14,11 +14,11 @@
             <div class="card shadow-sm border-0">
                 <div class="card-body">
                     <div class="row d-flex-justify-content-center text-center">
-                        <div class="col-lg-12 h4 font-weight-bold my-3 text-uppercase">
+                        <div class="col-lg-12 h4 font-weight-bold text-uppercase">
                             {{$registration->full_name}}
                         </div>
 
-                        <div class="col-lg-12 font-weight-bold my-3 text-uppercase">
+                        <div class="col-lg-12 text-uppercase">
                             {{$registration->reg_ref}}
                         </div>
                         
