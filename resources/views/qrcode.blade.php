@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center my-5">
+    <div class="row justify-content-center my-3">
         <div class="col-md-4">
-            <p class="text-center font-weight-bold">
+            <p class="text-center h4 font-weight-bold">
                 PRESENT THIS QR TO STUDENTS AFFAIRS OFFICE.
             </p>
         </div>
