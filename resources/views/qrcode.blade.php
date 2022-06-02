@@ -17,7 +17,7 @@
                         <div class="col-lg-12 h4 font-weight-bold my-3 text-uppercase">
                             {{$registration->full_name}}
                         </div>
-                        <p>{{$registration->reg_ref}}</p>
+                        
                         <div class="col-lg-12 my-3">
                             <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(250)
                              ->merge(public_path('images/logo.png'), 0.3, true)->errorCorrection('H')
