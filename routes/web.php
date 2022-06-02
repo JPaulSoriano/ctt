@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Course;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-Route::get('/qrcode/{id}', 'QRController@generateQrCode');
-Route::resource('tracings','TracingController');
-Route::get('/today', 'TracingController@today')->name('today');
-Route::get('/scanned', 'TracingController@scanned')->name('scanned');
-
-
-// Auth::routes(['register' => false]);
 Auth::routes();
 
+Route::get('/', 'RegistrationController@create');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('registrations','RegistrationController');
+Route::get('/status', 'RegistrationController@status')->name('status');
+Route::resource('departments','DepartmentController');
+Route::resource('courses','CourseController');
+Route::resource('academicyears','AcademicYearController');
+Route::get('/qrcode/{id}', 'QRController@generateQrCode');

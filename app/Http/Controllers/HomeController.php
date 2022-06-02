@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TimeVisit;
-use App\Tracing;
 
 class HomeController extends Controller
 {
@@ -25,9 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $today = TimeVisit::whereDate('created_at', '=', date('Y-m-d'))->count();
-        $scanned = TimeVisit::all()->count();
-        $registrations = Tracing::all()->count();
-        return view('home', compact('today', 'scanned', 'registrations'));
+        return view('home');
     }
 }

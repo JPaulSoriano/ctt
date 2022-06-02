@@ -3,31 +3,19 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-2 my-1">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white">Scanned Today</div>
-                    <div class="card-body text-center">
-                        <h2 class="font-weight-bold">{{ $today}}</h2>
-                        <a href="{{ route('today') }}">Show</a>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-2 my-1">
-            <div class="card">
-                <div class="card-header bg-primary text-white">Scanned</div>
-                    <div class="card-body text-center">
-                        <h2 class="font-weight-bold">{{ $scanned}}</h2>
-                        <a href="{{ route('scanned') }}">Show</a>
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-2 my-1">
-            <div class="card">
-                <div class="card-header bg-primary text-white">Registered</div>
-                    <div class="card-body text-center">
-                        <h2 class="font-weight-bold">{{ $registrations}}</h2>
-                        <a href="{{ route('tracings.index') }}">Show</a>
-                    </div>
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
             </div>
         </div>
     </div>
