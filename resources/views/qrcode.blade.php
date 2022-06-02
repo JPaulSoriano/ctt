@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center my-5">
         <div class="col-md-4">
-            <p class="text-center text-primary font-weight-bold">
+            <p class="text-center font-weight-bold">
                 PRESENT THIS QR TO STUDENTS AFFAIRS OFFICE.
             </p>
         </div>
@@ -16,6 +16,10 @@
                     <div class="row d-flex-justify-content-center text-center">
                         <div class="col-lg-12 h4 font-weight-bold my-3 text-uppercase">
                             {{$registration->full_name}}
+                        </div>
+
+                        <div class="col-lg-12 font-weight-bold my-3 text-uppercase">
+                            {{$registration->reg_ref}}
                         </div>
                         
                         <div class="col-lg-12 my-3">
