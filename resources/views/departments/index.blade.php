@@ -13,13 +13,14 @@
         </div>
     @endif
 
-
-    <table class="table table-borderless table-sm">
-    <thead class="bg-primary text-white text-center">
+    <div class="card">
+        <div class="card-header bg-primary text-white">Register</div>
+        <div class="card-body">
+    <table class="table table-borderless table-responsive">
+    <thead>
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th width="280px">Action</th>
         </tr>
     </thead>
 	    @foreach ($departments as $department)
@@ -29,6 +30,8 @@
 	    </tr>
 	    @endforeach
     </table>
+</div>
+</div>
 
 
     {!! $departments->links() !!}
