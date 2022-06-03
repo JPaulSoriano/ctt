@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
         {{ $message }}
@@ -41,8 +39,7 @@
 </tbody>
     @endforeach
 </table>
-</div>
-</div>
 {!! $registrations->links() !!}
-
+</div>
+</div>
 @endsection

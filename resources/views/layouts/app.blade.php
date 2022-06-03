@@ -41,6 +41,11 @@
                         <!-- Authentication Links -->
                         @guest
                         @else
+                            <li><a class="nav-link" href="{{ route('registrations.index') }}">Registrations</a></li>
+                            <li><a class="nav-link" href="{{ route('departments.index') }}">Departments</a></li>
+                            <li><a class="nav-link" href="{{ route('courses.index') }}">Courses</a></li>
+                            <li><a class="nav-link" href="{{ route('academicyears.index') }}">Academic Year</a></li>
+                            <li><a class="nav-link" href="{{ route('status') }}">Search</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

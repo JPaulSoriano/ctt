@@ -12,7 +12,7 @@
                     <div class="input-group col-sm-12 mb-3">
                         <input type="text" class="form-control" placeholder="Registration Reference Number" name="status">
                         <div class="input-group-append">
-                          <button class="btn btn-primary" type="Check">Check</button>
+                          <button class="btn btn-primary" type="Check">Search</button>
                         </div>
                       </div>
                       
