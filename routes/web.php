@@ -15,7 +15,6 @@ use App\Course;
 
 
 Auth::routes();
-
 Route::get('/', 'RegistrationController@create');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('registrations','RegistrationController');
