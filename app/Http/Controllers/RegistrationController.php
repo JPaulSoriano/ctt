@@ -10,6 +10,13 @@ use App\AcademicYear;
 
 class RegistrationController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth', ['except' => [
+            'create', 'store', 'status'
+        ]]);
+    }
+
     public function index()
     {
         $registrations = Registration::latest()->paginate(5);
@@ -57,10 +64,6 @@ class RegistrationController extends Controller
         return view('registrations.create', compact('courses'));
     }
 
-    public function show(Registration $registration)
-    {
-        return view('registrations.show',compact('registration'));
-    }
 
     public function status(Request $request){
         // Get the search value from the request

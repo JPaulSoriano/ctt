@@ -7,6 +7,12 @@ use App\AcademicYear;
 
 class AcademicYearController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $academicyears = AcademicYear::latest()->paginate(5);
