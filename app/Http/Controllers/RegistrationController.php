@@ -19,10 +19,11 @@ class RegistrationController extends Controller
 
     public function index()
     {
-        $registrations = Registration::latest()->paginate(5);
-  
-        return view('registrations.index',compact('registrations'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $tempids = Registration::whereNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
+        $ornos = Registration::whereNotNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
+        $permaids = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNull('perma_id')->paginate(2);
+        $registrations = Registration::all();
+        return view('registrations.index',compact('tempids', 'ornos', 'permaids', 'registrations'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function store(Request $request)
@@ -35,6 +36,10 @@ class RegistrationController extends Controller
             'last_name' => 'required',
             'first_name' => 'required',
             'middle_name' => 'required',
+            'gender' => 'required',
+            'religion' => 'required',
+            'nationality' => 'required',
+            'civil_status' => 'required',
             'phone_no' => 'required',
             'email' => 'required',
             'address' => 'required',
@@ -64,17 +69,35 @@ class RegistrationController extends Controller
         return view('registrations.create', compact('courses'));
     }
 
-
     public function status(Request $request){
-        // Get the search value from the request
         $search = $request->input('status');
-    
-        // Search in the title and body columns from the posts table
-        $registrations = Registration::query()
-            ->where('reg_ref', '=', "{$search}")
-            ->get();
-    
-        // Return the search view with the resluts compacted
+        $registrations = Registration::query()->where('reg_ref', '=', "{$search}")->get();
         return view('registrations.status', compact('registrations'));
     }
+
+
+    public function tempid(Request $request, Registration $registration)
+    {
+        $registration->temp_id = $request->temp_id;
+        $registration->save();
+        return redirect()->route('registrations.index');
+    }
+
+    public function orno(Request $request, Registration $registration)
+    {
+        $registration->or_no = $request->or_no;
+        $registration->save();
+        return redirect()->route('registrations.index');
+    }
+
+    public function permaid(Request $request, Registration $registration)
+    {
+        $registration->perma_id = $request->perma_id;
+        $registration->save();
+        return redirect()->route('registrations.index');
+    }
+
+
+
+
 }

@@ -23,11 +23,24 @@ class CreateRegistrationsTable extends Migration
             $table->string('last_name');
             $table->string('first_name');
             $table->string('middle_name');
+            $table->string('gender');
+            $table->string('religion');
+            $table->string('nationality');
+            $table->string('civil_status');
             $table->string('phone_no');
             $table->string('email');
             $table->string('address');
             $table->string('last_school');
+            $table->string('father');
+            $table->string('father_occupation');
+            $table->string('father_phone');
+            $table->string('mother');
+            $table->string('mother_occupation');
+            $table->string('mother_phone');
             $table->string('reg_ref');
+            $table->string('temp_id')->nullable();
+            $table->string('or_no')->nullable();
+            $table->string('perma_id')->nullable();
             $table->timestamps();
         });
     }

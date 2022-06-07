@@ -15,11 +15,24 @@ class Registration extends Model
         'last_name',
         'first_name',
         'middle_name',
+        'gender',
+        'religion',
+        'nationality',
+        'civil_status',
         'phone_no',
         'email',
         'address',
         'last_school',
-        'reg_ref'
+        'reg_ref',
+        'temp_id',
+        'or_no',
+        'perma_id',
+        'father',
+        'father_occupation',
+        'father_phone',
+        'mother',
+        'mother_occupation',
+        'mother_phone'
     ];
 
     public function course(){

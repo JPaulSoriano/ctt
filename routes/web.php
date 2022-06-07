@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Course;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +22,6 @@ Route::resource('departments','DepartmentController');
 Route::resource('courses','CourseController');
 Route::resource('academicyears','AcademicYearController');
 Route::get('/qrcode/{id}', 'QRController@generateQrCode');
+Route::post('/tempid/{registration}', 'RegistrationController@tempid')->name('tempid');
+Route::post('/orno/{registration}', 'RegistrationController@orno')->name('orno');
+Route::post('/permaid/{registration}', 'RegistrationController@permaid')->name('permaid');
