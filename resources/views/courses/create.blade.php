@@ -10,6 +10,7 @@
         </ul>
     </div>
 @endif
+@can('isAdmin')
 <form action="{{ route('courses.store') }}" method="POST">
     @csrf
     <div class="row">
@@ -34,4 +35,5 @@
         </div>
     </div>
 </form>
+@endcan
 @endsection

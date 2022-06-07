@@ -5,6 +5,7 @@
     {{ $message }}
 </div>
 @endif
+@can('isAdmin')
 <div class="my-2">
 <a class="btn btn-primary" href="{{ route('departments.create') }}">Create</a>
 </div>
@@ -30,4 +31,5 @@
     {!! $departments->links() !!}
 </div>
 </div>
+@endcan
 @endsection

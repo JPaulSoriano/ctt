@@ -6,6 +6,7 @@
     </div>
 @endif
 
+@canany(['isSao', 'isAdmin']) 
 <div class="row my-2">
 <div class="col-sm-12">
 <div class="card">
@@ -56,9 +57,9 @@
 </div>
 </div>
 </div>
+@endcanany
 
-
-
+@canany(['isCashier', 'isAdmin'])
 <div class="row my-2">
 <div class="col-sm-12">
 <div class="card">
@@ -109,8 +110,10 @@
 </div>
 </div>
 </div>
+@endcanany
 
 
+@canany(['isDean', 'isAdmin'])
 <div class="row my-2">
 <div class="col-sm-12">
 <div class="card">
@@ -161,7 +164,7 @@
 </div>
 </div>
 </div>
-
+@endcanany
 
 @foreach ($registrations as $registration)
     <div class="modal fade" id="modal-{{ $registration->id }}" tabindex="-1">
