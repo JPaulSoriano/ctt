@@ -19,7 +19,6 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Ref No</th>
                     <th>A.Y.</th>
                     <th>Semester</th>
                     <th>Type</th>
@@ -31,7 +30,6 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $registration->full_name }}</td>
                     <td>{{ $registration->address }}</td>
-                    <td>{{ $registration->reg_ref }}</td>
                     <td>{{ $registration->academic_year->name }}</td>
                     <td>{{ $registration->semester }}</td>
                     <td>{{ $registration->enrollment_type }}</td>
@@ -72,7 +70,6 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Ref No</th>
                     <th>A.Y.</th>
                     <th>Semester</th>
                     <th>Type</th>
@@ -84,7 +81,6 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $registration->full_name }}</td>
                     <td>{{ $registration->address }}</td>
-                    <td>{{ $registration->reg_ref }}</td>
                     <td>{{ $registration->academic_year->name }}</td>
                     <td>{{ $registration->semester }}</td>
                     <td>{{ $registration->enrollment_type }}</td>
@@ -126,7 +122,6 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Ref No</th>
                     <th>A.Y.</th>
                     <th>Semester</th>
                     <th>Type</th>
@@ -138,7 +133,6 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $registration->full_name }}</td>
                     <td>{{ $registration->address }}</td>
-                    <td>{{ $registration->reg_ref }}</td>
                     <td>{{ $registration->academic_year->name }}</td>
                     <td>{{ $registration->semester }}</td>
                     <td>{{ $registration->enrollment_type }}</td>
@@ -179,7 +173,6 @@
                 <tr>
                     <th>No</th>
                     <th>Name</th>
-                    <th>Ref No</th>
                     <th>A.Y.</th>
                     <th>Semester</th>
                     <th>Type</th>
@@ -190,7 +183,6 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $registration->full_name }}</td>
-                    <td>{{ $registration->reg_ref }}</td>
                     <td>{{ $registration->academic_year->name }}</td>
                     <td>{{ $registration->semester }}</td>
                     <td>{{ $registration->enrollment_type }}</td>
