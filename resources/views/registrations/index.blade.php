@@ -166,6 +166,60 @@
 </div>
 @endcanany
 
+
+@can(['isAdmin'])
+<div class="row my-2">
+<div class="col-sm-12">
+<div class="card">
+    <div class="card-header bg-primary text-white">Registered Students</div>
+    <div class="card-body">
+<table class="table table-borderless table-responsive">
+    <thead>
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Ref No</th>
+        <th>A.Y.</th>
+        <th>Semester</th>
+        <th>Type</th>
+    </tr>
+</thead>
+    @foreach ($registrations as $registration)
+<tbody>
+    <tr>
+        <td>{{ ++$i }}</td>
+        <td>{{ $registration->full_name }}</td>
+        <td>{{ $registration->address }}</td>
+        <td>{{ $registration->reg_ref }}</td>
+        <td>{{ $registration->academic_year->name }}</td>
+        <td>{{ $registration->semester }}</td>
+        <td>{{ $registration->enrollment_type }}</td>
+
+        <td>
+            @if($registration->permaid == null)
+            <form action="{{ route('permaid', $registration) }}" method="POST">
+                @csrf
+                <input type="text" name="perma_id" class="form-control" placeholder="Permanent ID">
+                <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View Details</button>
+            </form>
+            @else
+            @endif
+        </td>
+
+
+    </tr>
+</tbody>
+    @endforeach
+</table>
+{!! $permaids->links() !!}
+</div>
+</div>
+</div>
+</div>
+@endcan
+
 @foreach ($registrations as $registration)
     <div class="modal fade" id="modal-{{ $registration->id }}" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
