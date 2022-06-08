@@ -5,220 +5,212 @@
         {{ $message }}
     </div>
 @endif
+<div class="row">
+    <div class="col-sm-7">
+            @canany(['isSao', 'isAdmin']) 
+            <div class="row my-2">
+            <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Admit</div>
+                <div class="card-body">
+            <table class="table table-borderless table-responsive">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Ref No</th>
+                    <th>A.Y.</th>
+                    <th>Semester</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+                @foreach ($tempids as $registration)
+            <tbody>
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $registration->full_name }}</td>
+                    <td>{{ $registration->address }}</td>
+                    <td>{{ $registration->reg_ref }}</td>
+                    <td>{{ $registration->academic_year->name }}</td>
+                    <td>{{ $registration->semester }}</td>
+                    <td>{{ $registration->enrollment_type }}</td>
 
-@canany(['isSao', 'isAdmin']) 
-<div class="row my-2">
-<div class="col-sm-12">
-<div class="card">
-    <div class="card-header bg-primary text-white">Admit</div>
-    <div class="card-body">
-<table class="table table-borderless table-responsive">
-    <thead>
-    <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Ref No</th>
-        <th>A.Y.</th>
-        <th>Semester</th>
-        <th>Type</th>
-    </tr>
-</thead>
-    @foreach ($tempids as $registration)
-<tbody>
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $registration->full_name }}</td>
-        <td>{{ $registration->address }}</td>
-        <td>{{ $registration->reg_ref }}</td>
-        <td>{{ $registration->academic_year->name }}</td>
-        <td>{{ $registration->semester }}</td>
-        <td>{{ $registration->enrollment_type }}</td>
-
-        <td>
-            @if($registration->temp_id == null)
-            <form action="{{ route('tempid', $registration) }}" method="POST">
-                @csrf
-                <input type="text" name="temp_id" class="form-control" placeholder="Temp ID">
-                <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
-                <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View Details</button>
-            </form>
-            @else
-            @endif
-        </td>
+                    <td>
+                        @if($registration->temp_id == null)
+                        <form action="{{ route('tempid', $registration) }}" method="POST">
+                            @csrf
+                            <input type="text" name="temp_id" class="form-control" placeholder="Temp ID">
+                            <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                            <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View</button>
+                        </form>
+                        @else
+                        @endif
+                    </td>
 
 
-    </tr>
-</tbody>
-    @endforeach
-</table>
-{!! $tempids->links() !!}
+                </tr>
+            </tbody>
+                @endforeach
+            </table>
+            {!! $tempids->links() !!}
+            </div>
+            </div>
+            </div>
+            </div>
+            @endcanany
+
+            @canany(['isCashier', 'isAdmin'])
+            <div class="row my-2">
+            <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Payment</div>
+                <div class="card-body">
+            <table class="table table-borderless table-responsive">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Ref No</th>
+                    <th>A.Y.</th>
+                    <th>Semester</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+                @foreach ($ornos as $registration)
+            <tbody>
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $registration->full_name }}</td>
+                    <td>{{ $registration->address }}</td>
+                    <td>{{ $registration->reg_ref }}</td>
+                    <td>{{ $registration->academic_year->name }}</td>
+                    <td>{{ $registration->semester }}</td>
+                    <td>{{ $registration->enrollment_type }}</td>
+
+                    <td>
+                        @if($registration->or_no == null)
+                        <form action="{{ route('orno', $registration) }}" method="POST">
+                            @csrf
+                            <input type="text" name="or_no" class="form-control" placeholder="Or Number">
+                            <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                            <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View</button>
+                        </form>
+                        @else
+                        @endif
+                    </td>
+
+
+                </tr>
+            </tbody>
+                @endforeach
+            </table>
+            {!! $ornos->links() !!}
+            </div>
+            </div>
+            </div>
+            </div>
+            @endcanany
+
+
+            @canany(['isDean', 'isAdmin'])
+            <div class="row my-2">
+            <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Enroll</div>
+                <div class="card-body">
+            <table class="table table-borderless table-responsive">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Ref No</th>
+                    <th>A.Y.</th>
+                    <th>Semester</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+                @foreach ($permaids as $registration)
+            <tbody>
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $registration->full_name }}</td>
+                    <td>{{ $registration->address }}</td>
+                    <td>{{ $registration->reg_ref }}</td>
+                    <td>{{ $registration->academic_year->name }}</td>
+                    <td>{{ $registration->semester }}</td>
+                    <td>{{ $registration->enrollment_type }}</td>
+
+                    <td>
+                        @if($registration->perma_id == null)
+                        <form action="{{ route('permaid', $registration) }}" method="POST">
+                            @csrf
+                            <input type="text" name="perma_id" class="form-control" placeholder="Permanent ID">
+                            <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                            <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View</button>
+                        </form>
+                        @else
+                        @endif
+                    </td>
+
+
+                </tr>
+            </tbody>
+                @endforeach
+            </table>
+            {!! $permaids->links() !!}
+            </div>
+            </div>
+            </div>
+            </div>
+            @endcanany
+    </div>
+    <div class="col-sm-5">
+            @can(['isAdmin'])
+            <div class="row my-2">
+            <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Registered Students</div>
+                <div class="card-body">
+            <table class="table table-borderless table-responsive">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Ref No</th>
+                    <th>A.Y.</th>
+                    <th>Semester</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+                @foreach ($registrations as $registration)
+            <tbody>
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $registration->full_name }}</td>
+                    <td>{{ $registration->reg_ref }}</td>
+                    <td>{{ $registration->academic_year->name }}</td>
+                    <td>{{ $registration->semester }}</td>
+                    <td>{{ $registration->enrollment_type }}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View</button>
+                    </td>
+
+
+                </tr>
+            </tbody>
+                @endforeach
+            </table>
+            {!! $registrations->links() !!}
+            </div>
+            </div>
+            </div>
+            </div>
+            @endcan
+    </div>
 </div>
-</div>
-</div>
-</div>
-@endcanany
-
-@canany(['isCashier', 'isAdmin'])
-<div class="row my-2">
-<div class="col-sm-12">
-<div class="card">
-    <div class="card-header bg-primary text-white">Payment</div>
-    <div class="card-body">
-<table class="table table-borderless table-responsive">
-    <thead>
-    <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Ref No</th>
-        <th>A.Y.</th>
-        <th>Semester</th>
-        <th>Type</th>
-    </tr>
-</thead>
-    @foreach ($ornos as $registration)
-<tbody>
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $registration->full_name }}</td>
-        <td>{{ $registration->address }}</td>
-        <td>{{ $registration->reg_ref }}</td>
-        <td>{{ $registration->academic_year->name }}</td>
-        <td>{{ $registration->semester }}</td>
-        <td>{{ $registration->enrollment_type }}</td>
-
-        <td>
-            @if($registration->or_no == null)
-            <form action="{{ route('orno', $registration) }}" method="POST">
-                @csrf
-                <input type="text" name="or_no" class="form-control" placeholder="Or Number">
-                <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
-                <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View Details</button>
-            </form>
-            @else
-            @endif
-        </td>
-
-
-    </tr>
-</tbody>
-    @endforeach
-</table>
-{!! $ornos->links() !!}
-</div>
-</div>
-</div>
-</div>
-@endcanany
-
-
-@canany(['isDean', 'isAdmin'])
-<div class="row my-2">
-<div class="col-sm-12">
-<div class="card">
-    <div class="card-header bg-primary text-white">Enroll</div>
-    <div class="card-body">
-<table class="table table-borderless table-responsive">
-    <thead>
-    <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Ref No</th>
-        <th>A.Y.</th>
-        <th>Semester</th>
-        <th>Type</th>
-    </tr>
-</thead>
-    @foreach ($permaids as $registration)
-<tbody>
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $registration->full_name }}</td>
-        <td>{{ $registration->address }}</td>
-        <td>{{ $registration->reg_ref }}</td>
-        <td>{{ $registration->academic_year->name }}</td>
-        <td>{{ $registration->semester }}</td>
-        <td>{{ $registration->enrollment_type }}</td>
-
-        <td>
-            @if($registration->permaid == null)
-            <form action="{{ route('permaid', $registration) }}" method="POST">
-                @csrf
-                <input type="text" name="perma_id" class="form-control" placeholder="Permanent ID">
-                <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
-                <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View Details</button>
-            </form>
-            @else
-            @endif
-        </td>
-
-
-    </tr>
-</tbody>
-    @endforeach
-</table>
-{!! $permaids->links() !!}
-</div>
-</div>
-</div>
-</div>
-@endcanany
-
-
-@can(['isAdmin'])
-<div class="row my-2">
-<div class="col-sm-12">
-<div class="card">
-    <div class="card-header bg-primary text-white">Registered Students</div>
-    <div class="card-body">
-<table class="table table-borderless table-responsive">
-    <thead>
-    <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Ref No</th>
-        <th>A.Y.</th>
-        <th>Semester</th>
-        <th>Type</th>
-    </tr>
-</thead>
-    @foreach ($registrations as $registration)
-<tbody>
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $registration->full_name }}</td>
-        <td>{{ $registration->address }}</td>
-        <td>{{ $registration->reg_ref }}</td>
-        <td>{{ $registration->academic_year->name }}</td>
-        <td>{{ $registration->semester }}</td>
-        <td>{{ $registration->enrollment_type }}</td>
-
-        <td>
-            @if($registration->permaid == null)
-            <form action="{{ route('permaid', $registration) }}" method="POST">
-                @csrf
-                <input type="text" name="perma_id" class="form-control" placeholder="Permanent ID">
-                <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
-                <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View Details</button>
-            </form>
-            @else
-            @endif
-        </td>
-
-
-    </tr>
-</tbody>
-    @endforeach
-</table>
-{!! $permaids->links() !!}
-</div>
-</div>
-</div>
-</div>
-@endcan
 
 @foreach ($registrations as $registration)
     <div class="modal fade" id="modal-{{ $registration->id }}" tabindex="-1">

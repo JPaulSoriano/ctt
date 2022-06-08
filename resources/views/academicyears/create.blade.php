@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    @if ($errors->any())
+<div class="row justify-content-center">
+    <div class="col-sm-4">
+        @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
             <ul>
@@ -26,4 +28,6 @@
 		</div>
     </form>
     @endcan
+    </div>
+</div>
 @endsection

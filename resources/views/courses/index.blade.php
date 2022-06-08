@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="row justify-content-center">
+    <div class="col-sm-6">
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
         {{ $message }}
@@ -34,4 +36,6 @@
 </div>
 </div>
 @endcan
+    </div>
+</div>
 @endsection
