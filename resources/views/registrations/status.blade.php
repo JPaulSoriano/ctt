@@ -36,110 +36,151 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="email" class="form-control" value="{{ $registration->last_name }}">
+                                        <input type="text" class="form-control" value="{{ $registration->last_name }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="email" class="form-control" value="{{ $registration->first_name }}">
+                                        <input type="text" class="form-control" value="{{ $registration->first_name }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Middle Name</label>
-                                        <input type="email" class="form-control" value="{{ $registration->middle_name }}">
+                                        <input type="text" class="form-control" value="{{ $registration->middle_name }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="form-group">
                                         <label>Gender</label>
-                                        <input type="email" class="form-control" value="{{ $registration->gender }}">
+                                        <input type="text" class="form-control" value="{{ $registration->gender }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Religion</label>
-                                        <input type="email" class="form-control" value="{{ $registration->religion }}">
+                                        <input type="text" class="form-control" value="{{ $registration->religion }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Nationality</label>
-                                        <input type="email" class="form-control" value="{{ $registration->nationality }}">
+                                        <input type="text" class="form-control" value="{{ $registration->nationality }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="form-group">
                                         <label>Civil Status</label>
-                                        <input type="email" class="form-control" value="{{ $registration->civil_status }}">
+                                        <input type="text" class="form-control" value="{{ $registration->civil_status }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Mobile No</label>
-                                        <input type="email" class="form-control" value="{{ $registration->phone_no }}">
+                                        <input type="text" class="form-control" value="{{ $registration->phone_no }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" class="form-control" value="{{ $registration->email }}">
+                                        <input type="email" class="form-control" value="{{ $registration->email }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="email" class="form-control" value="{{ $registration->address }}">
+                                        <input type="text" class="form-control" value="{{ $registration->address }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Last School Attended</label>
-                                        <input type="email" class="form-control" value="{{ $registration->last_school }}">
+                                        <input type="text" class="form-control" value="{{ $registration->last_school }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>ID Number</label>
-                                        <input type="email" class="form-control" value="{{ $registration->perma_id }}">
+                                        <input type="text" class="form-control" value="{{ $registration->perma_id }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Father</label>
-                                        <input type="email" class="form-control" value="{{ $registration->father }}">
+                                        <input type="text" class="form-control" value="{{ $registration->father }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Father's Occupation</label>
-                                        <input type="email" class="form-control" value="{{ $registration->father_occupation }}">
+                                        <input type="text" class="form-control" value="{{ $registration->father_occupation }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Father's Mobile No</label>
-                                        <input type="email" class="form-control" value="{{ $registration->father_phone }}">
+                                        <input type="text" class="form-control" value="{{ $registration->father_phone }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Mother</label>
-                                        <input type="email" class="form-control" value="{{ $registration->mother }}">
+                                        <input type="text" class="form-control" value="{{ $registration->mother }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Mother's Occupation</label>
-                                        <input type="email" class="form-control" value="{{ $registration->mother_occupation }}">
+                                        <input type="text" class="form-control" value="{{ $registration->mother_occupation }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Mother's Mobile No</label>
-                                        <input type="email" class="form-control" value="{{ $registration->mother_phone }}">
+                                        <input type="text" class="form-control" value="{{ $registration->mother_phone }}" readonly>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>Admission</label>
+                                    @if($registration->temp_id == null)
+                                    <form action="{{ route('tempid', $registration) }}" method="POST">
+                                        @csrf
+                                        <input type="text" name="temp_id" class="form-control" placeholder="Temp ID">
+                                        <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                                    </form>
+                                    @else
+                                    <label>Temporary ID</label>
+                                    <input type="text" class="form-control" value="{{ $registration->temp_id }}" readonly>
+                                    @endif
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>Payment</label>
+                                    @if($registration->or_no == null)
+                                    <form action="{{ route('orno', $registration) }}" method="POST">
+                                        @csrf
+                                        <input type="text" name="or_no" class="form-control" placeholder="Or Number" {{ $registration->temp_id == null ? 'readonly' : '' }}>
+                                        <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                                    </form>
+                                    @else
+                                    <label>OR Number</label>
+                                    <input type="text" class="form-control" value="{{ $registration->or_no }}" readonly>
+                                    @endif
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>Endcoding and Printing</label>
+                                    @if($registration->perma_id == null)
+                                    <form action="{{ route('permaid', $registration) }}" method="POST">
+                                        @csrf
+                                        <input type="text" name="perma_id" class="form-control" placeholder="Permanent ID" {{ $registration->or_no == null ? 'readonly' : '' }}>
+                                        <button type="submit" class="btn btn-sm btn-success btn-block my-2">Save</button>
+                                    </form>
+                                    @else
+                                    <label>Permanent ID</label>
+                                    <input type="text" class="form-control" value="{{ $registration->perma_id }}" readonly>
+                                    @endif
                                 </div>
                             </div>
                         </div>

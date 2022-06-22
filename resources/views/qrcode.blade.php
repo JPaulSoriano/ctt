@@ -5,7 +5,7 @@
     <div class="row justify-content-center my-3">
         <div class="col-md-4">
             <p class="text-center h5 font-weight-bold">
-                PRESENT THIS QR TO STUDENTS AFFAIRS OFFICE.
+                PRESENT THIS QR TO STUDENT AFFAIRS OFFICE.
             </p>
         </div>
     </div>

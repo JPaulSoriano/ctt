@@ -11,7 +11,7 @@
             <div class="row my-2">
             <div class="col-sm-12">
             <div class="card">
-                <div class="card-header bg-primary text-white">Admit</div>
+                <div class="card-header bg-primary text-white">Admission</div>
                 <div class="card-body">
             <table class="table table-borderless table-responsive">
                 <thead>
@@ -114,7 +114,7 @@
             <div class="row my-2">
             <div class="col-sm-12">
             <div class="card">
-                <div class="card-header bg-primary text-white">Enroll</div>
+                <div class="card-header bg-primary text-white">Encoding and Printing</div>
                 <div class="card-body">
             <table class="table table-borderless table-responsive">
                 <thead>
@@ -178,24 +178,22 @@
                     <th>Type</th>
                 </tr>
             </thead>
-                @foreach ($registrations as $registration)
+                @foreach ($completed as $complete)
             <tbody>
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td>{{ $registration->full_name }}</td>
-                    <td>{{ $registration->academic_year->name }}</td>
-                    <td>{{ $registration->semester }}</td>
-                    <td>{{ $registration->enrollment_type }}</td>
+                    <td>{{ $complete->full_name }}</td>
+                    <td>{{ $complete->academic_year->name }}</td>
+                    <td>{{ $complete->semester }}</td>
+                    <td>{{ $complete->enrollment_type }}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $registration->id }}">View</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-block" data-toggle="modal" data-target="#modal-{{ $complete->id }}">View</button>
                     </td>
-
-
                 </tr>
             </tbody>
                 @endforeach
             </table>
-            {!! $registrations->links() !!}
+            {!! $completed->links() !!}
             </div>
             </div>
             </div>

@@ -13,7 +13,7 @@ class RegistrationController extends Controller
 
     public function __construct() {
         $this->middleware('auth', ['except' => [
-            'create', 'store', 'status'
+            'create', 'store'
         ]]);
     }
 
@@ -22,8 +22,9 @@ class RegistrationController extends Controller
         $tempids = Registration::whereNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
         $ornos = Registration::whereNotNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
         $permaids = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNull('perma_id')->paginate(2);
-        $registrations = Registration::paginate(3);
-        return view('registrations.index',compact('tempids', 'ornos', 'permaids', 'registrations'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $completed = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNotNull('perma_id')->paginate(2);
+        $registrations = Registration::all();
+        return view('registrations.index',compact('tempids', 'ornos', 'permaids', 'registrations', 'completed'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function store(Request $request)
@@ -80,21 +81,24 @@ class RegistrationController extends Controller
     {
         $registration->temp_id = $request->temp_id;
         $registration->save();
-        return redirect()->route('registrations.index');
+        // return redirect()->route('registrations.index');
+        return back();
     }
 
     public function orno(Request $request, Registration $registration)
     {
         $registration->or_no = $request->or_no;
         $registration->save();
-        return redirect()->route('registrations.index');
+        // return redirect()->route('registrations.index');
+        return back();
     }
 
     public function permaid(Request $request, Registration $registration)
     {
         $registration->perma_id = $request->perma_id;
         $registration->save();
-        return redirect()->route('registrations.index');
+        // return redirect()->route('registrations.index');
+        return back();
     }
 
 
