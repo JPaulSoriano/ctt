@@ -71,9 +71,10 @@ class RegistrationController extends Controller
     }
 
     public function status(Request $request){
+        $courses = Course::all();
         $search = $request->input('status');
         $registrations = Registration::query()->where('reg_ref', '=', "{$search}")->get();
-        return view('registrations.status', compact('registrations'));
+        return view('registrations.status', compact('registrations', 'courses'));
     }
 
 
@@ -102,6 +103,27 @@ class RegistrationController extends Controller
     }
 
 
-
+    
+    public function update(Request $request, Registration $registration)
+    {
+        $request->validate([
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'gender' => 'required',
+            'religion' => 'required',
+            'nationality' => 'required',
+            'civil_status' => 'required',
+            'phone_no' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'last_school' => 'required',
+        ]);
+  
+        $registration->update($request->all());
+  
+        return back()->with('success','Edit Successful');
+    }
+  
 
 }
