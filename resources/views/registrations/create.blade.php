@@ -106,19 +106,19 @@
                         <input type="text" name="birthplace" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-2">
                     <div class="form-group">
                         <label>Nationality:</label>
                         <input type="text" name="nationality" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="form-group">
                         <label>Phone No.:</label>
                         <input type="number" name="phone_no" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="form-group">
                         <label>Civil Status:</label>
                         <input type="text" name="civil_status" class="form-control" required>
@@ -144,6 +144,8 @@
                         <input type="text" name="last_school" class="form-control" required>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Father:</label>
