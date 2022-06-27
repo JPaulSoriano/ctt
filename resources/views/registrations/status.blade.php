@@ -51,6 +51,12 @@
                                         <input type="text" class="form-control" value="{{ $registration->middle_name }}" readonly>
                                     </div>
                                 </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Course</label>
+                                        <input type="text" class="form-control" value="{{ $registration->course }}" readonly>
+                                    </div>
+                                </div>
                                 <div class="col-sm-2">
                                     <div class="form-group">
                                         <label>Gender</label>

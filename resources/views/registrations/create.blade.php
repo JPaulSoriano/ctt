@@ -50,7 +50,7 @@
                 <div class="col-lg-2">
                     <div class="form-group">
                         <label>Year:</label>
-                        <select class="form-control" name="year">
+                        <select class="form-control" name="year" required>
                           <option>First Year</option>
                           <option>Second Year</option>
                           <option>Third Year</option>
@@ -63,25 +63,25 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Last Name:</label>
-                        <input type="text" name="last_name" class="form-control">
+                        <input type="text" name="last_name" class="form-control"required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>First Name:</label>
-                        <input type="text" name="first_name" class="form-control">
+                        <input type="text" name="first_name" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Middle Name:</label>
-                        <input type="text" name="middle_name" class="form-control">
+                        <input type="text" name="middle_name" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="form-group">
                         <label>Gender:</label>
-                        <select class="form-control" name="gender">
+                        <select class="form-control" name="gender" required>
                           <option>Male</option>
                           <option>Female</option>
                           <option>Other</option>
@@ -91,31 +91,31 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Religion:</label>
-                        <input type="text" name="religion" class="form-control">
+                        <input type="text" name="religion" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Nationality:</label>
-                        <input type="text" name="nationality" class="form-control">
+                        <input type="text" name="nationality" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Phone No.:</label>
-                        <input type="number" name="phone_no" class="form-control">
+                        <input type="number" name="phone_no" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Civil Status:</label>
-                        <input type="text" name="civil_status" class="form-control">
+                        <input type="text" name="civil_status" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Email:</label>
-                        <input type="text" name="email" class="form-control">
+                        <input type="text" name="email" class="form-control" required>
                     </div>
                 </div>
             </div>
@@ -123,49 +123,49 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Address:</label>
-                        <input type="text" name="address" class="form-control">
+                        <input type="text" name="address" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Last School Attended:</label>
-                        <input type="text" name="last_school" class="form-control">
+                        <input type="text" name="last_school" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Father:</label>
-                        <input type="text" name="father" class="form-control">
+                        <input type="text" name="father" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Occupation:</label>
-                        <input type="text" name="father_occupation" class="form-control">
+                        <input type="text" name="father_occupation" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Phone Number:</label>
-                        <input type="number" name="father_phone" class="form-control">
+                        <input type="number" name="father_phone" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Mother:</label>
-                        <input type="text" name="mother" class="form-control">
+                        <input type="text" name="mother" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Occupation:</label>
-                        <input type="text" name="mother_occupation" class="form-control">
+                        <input type="text" name="mother_occupation" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
                         <label>Phone Number:</label>
-                        <input type="number" name="mother_phone" class="form-control">
+                        <input type="number" name="mother_phone" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
