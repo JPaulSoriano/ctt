@@ -162,7 +162,6 @@
             @endcanany
     </div>
     <div class="col-sm-5">
-            @can(['isAdmin'])
             <div class="row my-2">
             <div class="col-sm-12">
             <div class="card">
@@ -198,7 +197,6 @@
             </div>
             </div>
             </div>
-            @endcan
     </div>
 </div>
 
