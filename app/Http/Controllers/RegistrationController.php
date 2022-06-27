@@ -22,7 +22,7 @@ class RegistrationController extends Controller
         $tempids = Registration::whereNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
         $ornos = Registration::whereNotNull('temp_id')->whereNull('or_no')->whereNull('perma_id')->paginate(2);
         $permaids = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNull('perma_id')->paginate(2);
-        $completed = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNotNull('perma_id')->paginate(2);
+        $completed = Registration::whereNotNull('temp_id')->whereNotNull('or_no')->whereNotNull('perma_id')->paginate(10);
         $registrations = Registration::all();
         return view('registrations.index',compact('tempids', 'ornos', 'permaids', 'registrations', 'completed'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

@@ -360,6 +360,6 @@
             </div>
             </div>
         </div>
-        </div>
-        @endforeach
+    </div>
+@endforeach
 @endsection
