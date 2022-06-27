@@ -54,7 +54,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Course</label>
-                                        <input type="text" class="form-control" value="{{ $registration->course }}" readonly>
+                                        <input type="text" class="form-control" value="{{ $registration->course->name }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
