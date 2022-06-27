@@ -16,6 +16,8 @@ class Registration extends Model
         'first_name',
         'middle_name',
         'gender',
+        'birthdate',
+        'birthplace',
         'religion',
         'nationality',
         'civil_status',

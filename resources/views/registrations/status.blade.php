@@ -54,6 +54,18 @@
                                         <input type="text" name="middle_name" class="form-control" value="{{ $registration->middle_name }}">
                                     </div>
                                 </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Birthdate</label>
+                                        <input type="date" name="birthdate" class="form-control" value="{{ $registration->birthdate }}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Birthplace</label>
+                                        <input type="text" name="birthplace" class="form-control" value="{{ $registration->birthplace }}">
+                                    </div>
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Course</label>

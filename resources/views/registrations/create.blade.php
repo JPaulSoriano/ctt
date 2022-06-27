@@ -88,10 +88,22 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-2">
                     <div class="form-group">
                         <label>Religion:</label>
                         <input type="text" name="religion" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Birthdate:</label>
+                        <input type="date" name="birthdate" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Birthplace:</label>
+                        <input type="text" name="birthplace" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-lg-4">

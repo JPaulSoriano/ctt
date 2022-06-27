@@ -255,6 +255,18 @@
                             <input type="text" class="form-control" value="{{ $registration->middle_name }}" readonly>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Birthdate</label>
+                            <input type="text" class="form-control" value="{{ $registration->birthdate }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Birthplace</label>
+                            <input type="text" class="form-control" value="{{ $registration->birthplace }}" readonly>
+                        </div>
+                    </div>
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label>Gender</label>
